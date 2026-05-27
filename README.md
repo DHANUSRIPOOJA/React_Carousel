@@ -1,5 +1,6 @@
 # Ex05 Image Carousel
-## Date:
+## Date: 27.05.2026
+## Name: K DHANUSRI POOJA
 
 ## AIM
 To create a Image Carousel using React 
@@ -40,8 +41,110 @@ Clean up the interval when the component unmounts using clearInterval to prevent
 
 ## PROGRAM
 
+APP.JSX
+
+```
+import "./App.css";
+import { useState } from "react";
+
+function App(){
+
+  const images = [
+
+    "https://via.placeholder.com/300",
+
+    "https://via.placeholder.com/300/ff0000",
+
+    "https://via.placeholder.com/300/0000ff"
+
+  ];
+
+  const [index, setIndex] = useState(0);
+
+  function nextImage(){
+
+    if(index === images.length - 1){
+
+      setIndex(0);
+
+    }else{
+
+      setIndex(index + 1);
+    }
+  }
+
+  function prevImage(){
+
+    if(index === 0){
+
+      setIndex(images.length - 1);
+
+    }else{
+
+      setIndex(index - 1);
+    }
+  }
+
+  return(
+
+    <div className="box">
+
+      <h1>Image Carousel</h1>
+
+      <img src={images[index]} />
+
+      <br /><br />
+
+      <button onClick={prevImage}>
+        Previous
+      </button>
+
+      <button onClick={nextImage}>
+        Next
+      </button>
+
+    </div>
+  );
+}
+
+export default App;
+```
+
+APP.CSS
+
+```
+body{
+  font-family: Arial;
+  background: #f0f0f0;
+  text-align: center;
+}
+
+.box{
+  background: white;
+  width: 350px;
+  padding: 20px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+img{
+  width: 300px;
+}
+
+button{
+  padding: 10px;
+  margin: 5px;
+  background: black;
+  color: white;
+  border: none;
+}
+```
+
+
 
 ## OUTPUT
+<img width="1230" height="673" alt="image" src="https://github.com/user-attachments/assets/ca338d24-5eb6-4550-b438-c3a71321b7e2" />
+<img width="1238" height="654" alt="image" src="https://github.com/user-attachments/assets/45874ca5-514e-4139-a1e1-5c1e196e327a" />
 
 
 ## RESULT
